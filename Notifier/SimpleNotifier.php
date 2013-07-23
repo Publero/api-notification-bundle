@@ -7,7 +7,7 @@ use Publero\ApiNotificationBundle\Model\Notification;
 use Publero\ApiNotificationBundle\Scheduler\Scheduler;
 use Publero\ApiNotificationBundle\Storage\Storage;
 
-class SimpleNotifier
+class SimpleNotifier implements Notifier
 {
     /**
      * @var Client
@@ -34,13 +34,6 @@ class SimpleNotifier
      */
     private $uri;
 
-    /**
-     * @param Client $client
-     * @param Scheduler $scheduler
-     * @param Storage $storage
-     * @param string $code
-     * @param string $uri
-     */
     public function __construct(Client $client, Scheduler $scheduler, Storage $storage, $code, $uri)
     {
         $this->client = $client;
@@ -50,11 +43,6 @@ class SimpleNotifier
         $this->uri = $uri;
     }
 
-    /**
-     * @param string $id
-     * @param string $data
-     * @return Notification
-     */
     public function notify($id, $data)
     {
         $notification = $this->storage->findOneByIdAndCode($id, $this->code);

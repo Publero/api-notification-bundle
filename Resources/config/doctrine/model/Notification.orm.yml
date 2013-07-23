@@ -1,4 +1,5 @@
-Publero\ApiNotificationBundle\Model\AccessToken:
+Publero\ApiNotificationBundle\Model\Notification:
+    type: entity
     id:
         id:
             type: integer

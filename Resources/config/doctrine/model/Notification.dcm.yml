@@ -1,5 +1,5 @@
-Publero\ApiNotificationBundle\Model\AccessToken:
-    collection: publeroapinotification_accesstoken
+Publero\ApiNotificationBundle\Model\Notification:
+    collection: publeroapinotification_notification
     fields:
         id:
             id: true

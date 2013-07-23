@@ -21,7 +21,7 @@ class Configuration implements ConfigurationInterface
                                     ->defaultValue('orm')
                                     ->cannotBeOverwritten()
                                 ->end()
-                                ->scalarNode('class_name')->defaultValue('PubleroApiNotificationBundle:Notification')->end()
+                                ->scalarNode('class_name')->defaultValue('Publero\ApiNotificationBundle\Model\Notification')->end()
                             ->end()
                         ->end()
                     ->end()
