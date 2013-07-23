@@ -1,0 +1,22 @@
+parameters:
+    publero_api_notification.notifier_list.class: 'Publero\ApiNotificationBundle\Notifier\NotifierList'
+
+services:
+    publero_api_notification.notifier_list:
+        class: '%publero_api_notification.notifier_list.class%'
+
+    publero_api_notification.client.buzz:
+        class: 'Publero\ApiNotificationBundle\Client\BuzzClient'
+        arguments: [ '@buzz' ]
+
+    publero_api_notification.scheduler.incremental:
+        class: 'Publero\ApiNotificationBundle\Scheduler\IncrementalScheduler'
+        arguments:
+            - %publero_api_notification.scheduler.incremental.increment_seconds%
+            - %publero_api_notification.scheduler.incremental.max_seconds%
+
+    publero_api_notification.storage.doctrine:
+        class: 'Publero\ApiNotificationBundle\Storage\DoctrineStorage'
+        arguments:
+            - @publero_token_authentication.object_manager
+            - %publero_api_notification.storage.doctrine.model_manager_name%

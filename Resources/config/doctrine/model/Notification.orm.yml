@@ -1,0 +1,18 @@
+Publero\ApiNotificationBundle\Model\AccessToken:
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+    fields:
+        code:
+            type: string
+        data:
+            type: text
+        sentAt:
+            type: datetime
+            nullable: true
+        scheduledAt:
+            type: datetime
+        sentCount:
+            type: integer
