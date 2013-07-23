@@ -1,0 +1,30 @@
+{
+    "name": "publero/api-notification-bundle",
+    "description": "Provides tools to repetitively notify remote API with ease",
+    "type": "symfony-bundle",
+    "homepage": "http://publero.github.com",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Publero s.r.o.",
+            "homepage": "https://www.publero.com"
+        },
+        {
+            "name": "Martin Hlaváč",
+            "email": "info@mhlavac.net",
+            "homepage": "http://www.mhlavac.net/"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "publero/test": "dev-master",
+        "sensio/buzz-bundle": "v1.0.0",
+        "symfony/framework-bundle": "2.3.*",
+        "symfony/yaml": "2.3.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Publero\\ApiNotificationBundle": ""
+        }
+    }
+}
