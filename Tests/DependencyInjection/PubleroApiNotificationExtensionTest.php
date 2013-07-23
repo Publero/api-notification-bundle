@@ -14,12 +14,10 @@ class PubleroApiNotificationExtensionTest extends ExtensionTestCase
         $container = $this->getContainer();
 
         $dbDriver = $config['storage_configuration']['doctrine']['db_driver'];
-        $className = $container->getParameter('publero_api_notification.storage.doctrine.class_name');
         $incrementSeconds = $container->getParameter('publero_api_notification.scheduler.incremental.increment_seconds');
         $maxSeconds = $container->getParameter('publero_api_notification.scheduler.incremental.max_seconds');
 
         $this->assertTrue($container->getParameter('publero_api_notification.storage.doctrine.db_driver_' . $dbDriver));
-        $this->assertEquals($config['storage_configuration']['doctrine']['class_name'], $className);
         $this->assertEquals($config['scheduler_configuration']['increment']['increment_seconds'], $incrementSeconds);
         $this->assertEquals($config['scheduler_configuration']['increment']['max_seconds'], $maxSeconds);
 
@@ -68,11 +66,9 @@ EOF;
 
         $this->loadExtension(new PubleroApiNotificationExtension(), [$config]);
         $container = $this->getContainer();
-        $className = $container->getParameter('publero_api_notification.storage.doctrine.class_name');
         $incrementSeconds = $container->getParameter('publero_api_notification.scheduler.incremental.increment_seconds');
         $maxSeconds = $container->getParameter('publero_api_notification.scheduler.incremental.max_seconds');
 
-        $this->assertEquals('PubleroApiNotificationBundle:Notification', $className);
         $this->assertEquals(60, $incrementSeconds);
         $this->assertEquals(3600, $maxSeconds);
         $this->assertFalse($container->hasParameter('publero_api_notification.storage.doctrine.db_driver_orm'));

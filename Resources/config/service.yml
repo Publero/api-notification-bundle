@@ -14,9 +14,3 @@ services:
         arguments:
             - %publero_api_notification.scheduler.incremental.increment_seconds%
             - %publero_api_notification.scheduler.incremental.max_seconds%
-
-    publero_api_notification.storage.doctrine:
-        class: 'Publero\ApiNotificationBundle\Storage\DoctrineStorage'
-        arguments:
-            - @publero_token_authentication.object_manager
-            - %publero_api_notification.storage.doctrine.model_manager_name%
