@@ -1,5 +1,5 @@
 services:
-    publero_token_authentication.object_manager:
+    publero_api_notification.object_manager:
         class: Doctrine\ODM\MongoDB\DocumentManager
         factory_service: doctrine_mongodb
         factory_method: getManager

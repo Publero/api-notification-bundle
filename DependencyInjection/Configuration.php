@@ -22,6 +22,7 @@ class Configuration implements ConfigurationInterface
                                     ->cannotBeOverwritten()
                                 ->end()
                                 ->scalarNode('class_name')->defaultValue('Publero\ApiNotificationBundle\Model\Notification')->end()
+                                ->scalarNode('model_manager_name')->defaultNull()->end()
                             ->end()
                         ->end()
                     ->end()

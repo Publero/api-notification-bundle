@@ -63,12 +63,14 @@ class PubleroApiNotificationExtension extends Extension
     public function loadDoctrineStorage(ContainerBuilder $container, $config, $loader)
     {
         $doctrineConfig = $config['storage_configuration']['doctrine'];
+
         $container->setParameter(self::STORAGE_DOCTRINE_DB_DRIVER . '_' . $doctrineConfig['db_driver'], true);
+        $container->setParameter('publero_api_notification.storage.doctrine.model_manager_name', $doctrineConfig['model_manager_name']);
         $loader->load($doctrineConfig['db_driver'] . '.yml');
 
         $class = 'Publero\ApiNotificationBundle\Storage\DoctrineStorage';
         $definition = new Definition($class, [
-            new Reference('doctrine.orm.entity_manager'),
+            new Reference('publero_api_notification.object_manager'),
             $doctrineConfig['class_name']
         ]);
         $container->setDefinition('publero_api_notification.storage.doctrine', $definition);

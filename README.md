@@ -1,6 +1,8 @@
 PubleroApiNotifierBundle
 ========================
 
+[![Build Status](https://travis-ci.org/Publero/api-notification-bundle.png?branch=master)](https://travis-ci.org/Publero/api-notification-bundle)
+
 This bundle adds support for notifying remote API.
 
 Documentation

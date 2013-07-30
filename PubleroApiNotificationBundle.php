@@ -11,7 +11,7 @@ class PubleroApiNotificationBundle extends Bundle
 {
     public function build(ContainerBuilder $container)
     {
-        $managerName = 'publero_token_authentication.model_manager_name';
+        $managerName = 'publero_api_notification.storage.doctrine.model_manager_name';
         $mappings = [
             realpath(__DIR__ . '/Resources/config/doctrine/model') => __NAMESPACE__ . '\Model',
         ];
