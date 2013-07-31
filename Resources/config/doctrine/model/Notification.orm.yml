@@ -1,5 +1,6 @@
 Publero\ApiNotificationBundle\Model\Notification:
     type: entity
+    table: apinotificationbundle_notification
     id:
         id:
             type: integer
